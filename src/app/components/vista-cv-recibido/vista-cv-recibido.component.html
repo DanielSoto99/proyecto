@@ -1,0 +1,16 @@
+<body>
+  <div class="cv-container">
+    <h2>Currículums Recibidos</h2>
+    <div class="cv-grid">
+      <!-- Iterar sobre los postulantes y crear las cards -->
+      <div class="cv-card" *ngFor="let postulante of postulantes">
+        <h3>{{ postulante.nombre }}</h3>
+        <p><strong>Área:</strong> {{ postulante.area }}</p>
+        <p><strong>Nombre:</strong> {{ postulante.nombre }}</p>
+        <button (click)="goToDetalle(postulante.id)">Ver Detalles</button>
+      </div>
+    </div>
+    <!-- Botón Volver -->
+    <button class="btn-back" (click)="goBack()">Volver</button>
+  </div>
+</body>

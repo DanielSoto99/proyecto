@@ -1,0 +1,136 @@
+
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+  background: linear-gradient(90deg, #1e3a8a, #2a5298); /* Gradiente azul */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar container - Mobile */
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 40px; /* Altura del logo */
+  margin-right: 10px;
+  border-radius: 50%; /* Hace el logo circular */
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* Links section */
+.navbar-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-link {
+  background: #ff8c00; /* Botón naranja */
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 25px; /* Botón más redondeado */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-link:hover {
+  background: #ffa500; /* Cambio de color al pasar el mouse */
+  transform: scale(1.05); /* Agranda ligeramente */
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none; /* Se oculta en pantallas grandes */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Menu responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Aparece en pantallas pequeñas */
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    color: #333;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navbar-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .btn-link {
+    width: 100%;
+    text-align: center;
+    padding: 10px 15px;
+    background: #1e3a8a;
+    color: white;
+    font-size: 18px;
+  }
+
+  .btn-link:hover {
+    background: #315aaa;
+  }
+}

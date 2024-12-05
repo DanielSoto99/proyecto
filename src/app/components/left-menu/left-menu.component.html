@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Menú lateral con filtros y opciones -->
+    <div class="col-md-3">
+      <div class="sidebar p-3 shadow-sm">
+        <div class="sidebar-header">
+          <h3 class="text-primary">Filtro</h3>
+        </div>
+
+        <!-- Filtro de búsqueda -->
+        <div class="filter-container mt-4">
+          <label for="exp" class="form-label">Años de exp</label>
+          <select id="exp" class="form-control mb-3" [(ngModel)]="filters.exp">
+            <option value="" disabled>Seleccione años de experiencia</option>
+            <option *ngFor="let exp of experienceOptions" [value]="exp">{{ exp }}</option>
+          </select>
+
+          <label for="jornada" class="form-label">Jornada</label>
+          <select id="jornada" class="form-control mb-3" [(ngModel)]="filters.jornada">
+            <option value="" disabled>Seleccione jornada</option>
+            <option *ngFor="let jornada of jornadaOptions" [value]="jornada">{{ jornada }}</option>
+          </select>
+
+          <label for="area" class="form-label">Área</label>
+          <select id="area" class="form-control mb-3" [(ngModel)]="filters.area">
+            <option value="" disabled>Seleccione área</option>
+            <option *ngFor="let area of areaOptions" [value]="area">{{ area }}</option>
+          </select>
+
+          <label for="disponibilidad" class="form-label">Disponibilidad</label>
+          <select id="disponibilidad" class="form-control mb-3" [(ngModel)]="filters.disponibilidad">
+            <option value="" disabled>Seleccione disponibilidad</option>
+            <option *ngFor="let disponibilidad of disponibilidadOptions" [value]="disponibilidad">{{ disponibilidad }}</option>
+          </select>
+
+          <button class="btn btn-primary w-100 mb-2" (click)="applyFilters()">Filtrar</button>
+          <button class="btn btn-secondary w-100" (click)="resetFilters()">Restablecer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor de Cards con paginación -->
+    <div class="col-md-9">
+      <div class="content">
+        <h1 class="text-center text-primary">Trabajos</h1>
+        <div class="row mt-4">
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let item of pagedItems">
+            <div class="card shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title">{{ item.titulo }}</h5>
+                <p class="card-text">{{ item.informacion ? (item.informacion | slice:0:50) + '...' : 'Sin descripción disponible' }}</p>
+                <a class="btn btn-outline-primary" [routerLink]="['/propuesta-detalle', item.id]">Ver más</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paginador -->
+        <mat-paginator
+          [length]="filteredItems.length"
+          [pageSize]="itemsPerPage"
+          [pageSizeOptions]="[9, 18, 27]"
+          (page)="onPageChange($event)">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

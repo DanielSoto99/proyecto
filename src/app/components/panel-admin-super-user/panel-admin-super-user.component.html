@@ -1,0 +1,42 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+  rel="stylesheet"
+/>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Panel de Administración RRHH Super Usuario</h1>
+      <p>Gestiona tus propuestas de trabajo y currículums fácilmente</p>
+    </header>
+
+    <div class="panel">
+      <div class="card">
+        <h2>Crear propuesta de trabajo</h2>
+        <p>Organiza nuevas ofertas laborales y conecta con talentos.</p>
+        <button (click)="goToCrearPropuesta()" class="btn">Entrar</button>
+      </div>
+      <div class="card">
+        <h2>Currículums recibidos</h2>
+        <p>Accede y gestiona los currículums de tus postulantes.</p>
+        <button (click)="goToCvRecibidos()" class="btn">Entrar</button>
+      </div>
+      <div class="card">
+        <h2>Crear usuarios</h2>
+        <p>Crea usuarios para la plataforma</p>
+        <button (click)="goToRegister()" class="btn">Entrar</button>
+      </div>
+      <div class="card">
+        <h2>Dashboard Power-bi</h2>
+        <p>Se podrán ver los datos de las encuestas e inteligencia de negocio.</p>
+        <button (click)="goToPowerBi()" class="btn">Entrar</button>
+      </div>
+      <div class="card">
+        <h2>Editar propuestas</h2>
+        <p>Se podrá editar una propuesta ya creada.</p>
+        <button (click)="editar()" class="btn">Entrar</button>
+      </div>
+    </div>
+  </div>
+
+</body>

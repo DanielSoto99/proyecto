@@ -1,0 +1,101 @@
+/* Tipografía y colores base */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+/* Contenedor principal */
+.curriculum-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.curriculum-container h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #4facfe;
+}
+
+/* Grid para las áreas */
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Caja para cada área */
+.area-box {
+  padding: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f4f7fc, #e0f7ff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #4facfe;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.area-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #00f2fe, #124068);
+  color: white;
+}
+
+/* Botón de Volver */
+.btn-back {
+  margin-top: 30px;
+  padding: 12px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #007bff, #007bff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.3s ease;
+  width: 100%;
+}
+
+.btn-back:hover {
+  background: linear-gradient(135deg, #0056b3, #0056b3);
+  transform: scale(1.05);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .curriculum-container h2 {
+    font-size: 1.8em;
+  }
+
+  .area-box {
+    font-size: 1em;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .curriculum-container {
+    padding: 15px;
+  }
+
+  .curriculum-container h2 {
+    font-size: 1.5em;
+  }
+
+  .area-box {
+    font-size: 0.9em;
+    padding: 20px;
+  }
+}

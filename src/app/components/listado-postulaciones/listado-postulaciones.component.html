@@ -1,0 +1,33 @@
+<div class="postulaciones-container">
+  <div *ngIf="propuestas.length > 0; else noPropuestas">
+    <table class="postulaciones-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Título de la Propuesta</th>
+          <th>Área</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let propuesta of propuestas">
+          <td>{{ propuesta.id }}</td>
+          <td>{{ propuesta.titulo || 'Sin título' }}</td>
+          <td>{{ propuesta.area || 'Sin área' }}</td>
+          <td>
+            <button class="btn-edit" (click)="updatePropuesta(propuesta.id)">Editar</button>
+            <button class="btn-delete" (click)="eliminarPropuesta(propuesta.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noPropuestas>
+    <p>No hay propuestas disponibles.</p>
+  </ng-template>
+  <div class="back-button">
+    <button class="btn-back" (click)="volver()">Volver</button>
+  </div>
+</div>
+

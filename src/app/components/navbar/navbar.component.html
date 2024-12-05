@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <a routerLink="/">
+        <img src="assets/images/logo.jpg" alt="Logo">
+      </a>
+      <span class="navbar-title">SmartDev</span>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <!-- Links -->
+    <div class="navbar-links" [ngClass]="{'active': isMenuActive}">
+      <!-- Si está logueado, muestra el botón de cerrar sesión, si no muestra el de ingresar -->
+      <button *ngIf="!isLoggedIn" (click)="goToLogin()" class="btn-link">Ingresar</button>
+      <button *ngIf="isLoggedIn" (click)="logout()" class="btn-link">Cerrar sesión</button>
+    </div>
+  </div>
+</nav>

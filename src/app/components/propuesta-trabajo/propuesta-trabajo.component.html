@@ -1,0 +1,43 @@
+<body>
+  <div class="job-proposal-template">
+    <div class="info-section">
+      <h2>Información del puesto</h2>
+      <div class="info-box">
+        <div class="info-item">
+          <span class="info-label">Título:</span>
+          <span class="info-value">{{ propuesta?.titulo || 'No disponible' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Área:</span>
+          <span class="info-value">{{ propuesta?.area || 'No disponible' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Información:</span>
+          <span class="info-value">{{ propuesta?.informacion || 'No disponible' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Disponibilidad:</span>
+          <span class="info-value">{{ propuesta?.disponibilidad || 'No disponible' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Experiencia:</span>
+          <span class="info-value">{{ propuesta?.experiencia ? propuesta.experiencia + ' años' : 'No disponible' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Jornada:</span>
+          <span class="info-value">{{ propuesta?.jornada || 'No disponible' }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="action-buttons">
+        <button (click)="goToPostular()" class="btn enviar-cv">
+          <i class="fas fa-paper-plane"></i> Postular
+        </button>
+        <button (click)="goToMenuUser()" class="btn continuar-buscando">
+          <i class="fas fa-search"></i> Seguir buscando
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

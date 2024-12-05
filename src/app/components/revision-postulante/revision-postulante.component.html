@@ -1,0 +1,56 @@
+<body>
+  <div class="postulante-container">
+    <!-- Título -->
+    <header class="header">
+      <h1>Postulante</h1>
+    </header>
+
+    <!-- Contenido -->
+    <div class="content">
+      <!-- Información del postulante -->
+      <div class="info-section">
+        <h2>Información del Postulante</h2>
+        <div class="info-box">
+          <p><strong>Nombre:</strong> {{ postulante?.nombre || 'Cargando...' }}</p>
+        </div>
+        <div class="info-box">
+          <p><strong>Apellido:</strong> {{ postulante?.apellido || 'Cargando...' }}</p>
+        </div>
+        <div class="info-box">
+          <p><strong>Correo Electrónico:</strong> {{ postulante?.email || 'Cargando...' }}</p>
+        </div>
+        <div class="info-box">
+          <p><strong>RUT:</strong> {{ postulante?.rut || 'Cargando...' }}</p>
+        </div>
+        <div class="info-box">
+          <p><strong>Edad:</strong> {{ postulante?.edad || 'Cargando...' }}</p>
+        </div>
+        <div class="info-box">
+          <p><strong>Comuna:</strong> {{ postulante?.comuna || 'Cargando...' }}</p>
+        </div>
+        <div class="info-box">
+          <p><strong>Género:</strong> {{ postulante?.genero || 'Cargando...' }}</p>
+        </div>
+        <div class="info-box">
+          <p><strong>Teléfono:</strong> {{ postulante?.telefono || 'Cargando...' }}</p>
+        </div>
+      </div>
+
+      <!-- Sección de CV -->
+      <div class="cv-section">
+        <button class="btn-download" (click)="downloadCv()">Descargar CV</button>
+      </div>
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="action-buttons">
+      <button class="btn-accept" (click)="acceptPostulante()">✔ Aceptar</button>
+      <button class="btn-reject" (click)="deletePostulante()">✘ Rechazar</button>
+    </div>
+
+    <!-- Botón Volver -->
+    <div class="back-button">
+      <button class="btn-back" (click)="goBack()">Volver</button>
+    </div>
+  </div>
+</body>

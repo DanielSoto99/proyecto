@@ -1,0 +1,89 @@
+<div class="container">
+  <h1 class="text-primary mb-4">Postulación</h1>
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="postulacionForm" (ngSubmit)="onSubmit()">
+        <h4 class="mb-4">Información de contacto</h4>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label required">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre"
+              [class.is-invalid]="postulacionForm.get('nombre')?.invalid && postulacionForm.get('nombre')?.touched">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label required">Apellido</label>
+            <input type="text" class="form-control" formControlName="apellido"
+              [class.is-invalid]="postulacionForm.get('apellido')?.invalid && postulacionForm.get('apellido')?.touched">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label required">Correo electrónico</label>
+          <input type="email" class="form-control" formControlName="email"
+            [class.is-invalid]="postulacionForm.get('email')?.invalid && postulacionForm.get('email')?.touched">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label required">Cargar CV</label>
+          <input type="file" class="form-control" accept=".pdf,.doc,.docx" (change)="onFileSelected($event)">
+        </div>
+
+        <h4 class="mt-4 mb-4">Información Adicional</h4>
+
+        <div class="mb-3">
+          <label class="form-label required">RUT</label>
+          <input type="text" class="form-control" formControlName="rut"
+            [class.is-invalid]="postulacionForm.get('rut')?.invalid && postulacionForm.get('rut')?.touched">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label required">Edad</label>
+          <input type="number" class="form-control" formControlName="edad"
+            [class.is-invalid]="postulacionForm.get('edad')?.invalid && postulacionForm.get('edad')?.touched">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label required">Comuna</label>
+          <select class="form-select" formControlName="comuna"
+            [class.is-invalid]="postulacionForm.get('comuna')?.invalid && postulacionForm.get('comuna')?.touched">
+            <option value="">Seleccione</option>
+            <option *ngFor="let comuna of comunas" [value]="comuna">{{comuna}}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label required">Género</label>
+          <select class="form-select" formControlName="genero"
+            [class.is-invalid]="postulacionForm.get('genero')?.invalid && postulacionForm.get('genero')?.touched">
+            <option value="">Seleccione</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label required">Área</label>
+          <select class="form-select" formControlName="area"
+            [class.is-invalid]="postulacionForm.get('area')?.invalid && postulacionForm.get('area')?.touched">
+            <option value="">Seleccione un área</option>
+            <option *ngFor="let area of areas" [value]="area">{{area}}</option>
+          </select>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label required">Teléfono</label>
+          <input type="tel" class="form-control" formControlName="telefono"
+            [class.is-invalid]="postulacionForm.get('telefono')?.invalid && postulacionForm.get('telefono')?.touched">
+        </div>
+
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary" [disabled]="!postulacionForm.valid">
+            Enviar Postulación
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

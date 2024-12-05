@@ -1,0 +1,273 @@
+/* Tipografía y colores base */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* Contenedor principal */
+.proposal-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+/* Sección del título */
+.text-section {
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-section h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.text-input, 
+.form-section textarea,
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+.text-input:focus, 
+.form-section textarea:focus,
+select:focus,
+input[type="number"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    background-color: #ffffff;
+}
+
+/* Sección de banner */
+.banner-section {
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.file-input {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.file-input:hover {
+    background: #f0f0f0;
+}
+
+/* Sección del menú desplegable */
+.dropdown-section {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid #e1e8ed;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    border: 2px solid #e1e8ed;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-button:focus {
+    border-color: #4facfe;
+    outline: none;
+    box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+.dropdown-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Lista del desplegable */
+.dropdown-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 2px solid #e1e8ed;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.dropdown-list li {
+    padding: 12px 20px;
+    transition: all 0.2s ease;
+}
+
+.dropdown-list li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.dropdown-list li:hover {
+    background-color: #f1f5f9;
+    color: #3498db;
+}
+
+/* Mostrar la lista al hacer clic */
+.dropdown-container.open .dropdown-list {
+    display: block;
+}
+
+/* Sección del formulario */
+.form-section {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #4facfe;
+}
+
+.form-section textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.form-section textarea:focus {
+    border-color: #4facfe;
+    outline: none;
+    box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+/* Botón de Crear propuesta */
+.create-button {
+    display: flex;
+    justify-content: center;
+}
+
+.create-button button {
+    padding: 16px 40px;
+    font-size: 1.1em;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.create-button button:hover:not([disabled]) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(52, 152, 219, 0.3);
+}
+
+.create-button button:disabled {
+    background: #e1e8ed;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .proposal-container {
+        padding: 20px;
+    }
+
+    .dropdown-section h2, .form-section h2 {
+        font-size: 1.2em;
+    }
+
+    .create-button button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .proposal-container {
+        padding: 15px;
+    }
+
+    .form-section textarea, .text-input {
+        font-size: 0.9em;
+    }
+
+    .create-button button {
+        font-size: 0.8em;
+    }
+    
+}
+
+/* Estilo mejorado para los selects */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 15px;
+    padding-right: 45px;
+}

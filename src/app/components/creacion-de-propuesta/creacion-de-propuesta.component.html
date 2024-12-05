@@ -1,0 +1,86 @@
+<div class="proposal-container">
+  <!-- Sección del título -->
+  <div class="text-section">
+    <h2>Título de la Propuesta</h2>
+    <input 
+      type="text" 
+      class="text-input" 
+      placeholder="Escribe el título de la propuesta aquí..."
+      [(ngModel)]="titulo" 
+    />
+  </div>
+
+  <!-- Sección de banner -->
+  <!-- <div class="banner-section">
+    <h2>Agregar banner de propuesta</h2>
+    <input 
+      type="file" 
+      accept="image/png, image/jpeg, image/jpg" 
+      class="file-input" 
+      (change)="onImageSelected($event)" 
+    />
+  </div> -->
+
+  <!-- Sección del menú desplegable -->
+  <div class="dropdown-section">
+    <h2>Seleccionar Área</h2>
+    <div 
+      class="dropdown-container" 
+      [ngClass]="{'open': isDropdownOpen}" 
+      (click)="toggleDropdown()"
+    >
+      <button class="dropdown-button">{{ selectedArea || 'Seleccionar Área' }}</button>
+      <ul class="dropdown-list" *ngIf="isDropdownOpen">
+        <li *ngFor="let area of areaOptions" (click)="selectArea(area)">
+          {{ area }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sección del formulario -->
+  <div class="form-section">
+    <h2>Información de la propuesta</h2>
+    <textarea 
+      placeholder="Escribe aquí la información de la propuesta..." 
+      rows="8" 
+      [(ngModel)]="informacion"
+    ></textarea>
+  </div>
+
+  <!-- Sección de disponibilidad -->
+  <div class="dropdown-section">
+    <h2>Disponibilidad</h2>
+    <select [(ngModel)]="disponibilidad">
+      <option value="Inmediata">Inmediata</option>
+      <option value="Diferida">Diferida</option>
+    </select>
+  </div>
+
+  <!-- Sección de experiencia -->
+  <div class="dropdown-section">
+    <h2>Experiencia (en años)</h2>
+    <input 
+      type="number" 
+      [(ngModel)]="experiencia" 
+      min="1" 
+      max="4" 
+      placeholder="Ingresa la experiencia en años"
+    />
+  </div>
+
+  <!-- Sección de jornada -->
+  <div class="dropdown-section">
+    <h2>Jornada</h2>
+    <select [(ngModel)]="jornada">
+      <option value="Diurna">Diurna</option>
+      <option value="Nocturna">Nocturna</option>
+      <option value="Mixta">Mixta</option>
+    </select>
+  </div>
+
+  <!-- Botón de guardar propuesta -->
+  <div class="create-button">
+    <button [disabled]="!isFormValid()" (click)="guardarPropuesta()">Guardar propuesta</button>
+  </div>
+</div>

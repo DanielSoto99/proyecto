@@ -1,0 +1,171 @@
+/* Tipografía y colores base */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+/* Contenedor principal */
+.postulaciones-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2em;
+  color: #4facfe;
+}
+
+/* Tabla */
+.table-container {
+  overflow-x: auto; /* Permitir desplazamiento horizontal en pantallas pequeñas */
+}
+
+.postulaciones-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.postulaciones-table th,
+.postulaciones-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.postulaciones-table th {
+  background: #4facfe;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.postulaciones-table tr:hover {
+  background: #f1faff;
+}
+
+.postulaciones-table td:last-child {
+  text-align: center;
+}
+
+/* Botones */
+.btn-edit,
+.btn-delete {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-edit {
+  background: #28a745;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+/* Botón Volver */
+.back-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-back {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #4facfe, #13a9b1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-back:hover {
+  background: linear-gradient(135deg, #00f2fe, #13a9b1);
+  transform: scale(1.05);
+}
+
+/* Responsividad */
+
+/* Pantallas medianas (tablets y dispositivos más pequeños) */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.8em;
+  }
+
+  .postulaciones-table th,
+  .postulaciones-table td {
+    padding: 10px;
+    font-size: 0.85em;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+
+  .btn-back {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.5em;
+  }
+
+  .postulaciones-container {
+    padding: 15px;
+  }
+
+  .postulaciones-table th,
+  .postulaciones-table td {
+    padding: 8px;
+    font-size: 0.75em;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    padding: 5px 8px;
+    font-size: 0.75em;
+  }
+
+  .btn-back {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+}
